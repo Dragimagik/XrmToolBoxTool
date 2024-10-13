@@ -1,4 +1,4 @@
-﻿namespace ThemePersonalizer.Forms
+﻿namespace Customizer.Forms
 {
     partial class WebresourcePicker
     {

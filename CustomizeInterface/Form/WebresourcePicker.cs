@@ -6,7 +6,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Windows.Forms;
 
-namespace ThemePersonalizer.Forms
+namespace Customizer.Forms
 {
     public partial class WebresourcePicker : Form
     {
