@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="McTools.Xrm.Connection, Version=1.2023.6.56, Culture=neutral, PublicKeyToken=96037217801d9658, processorArchitecture=MSIL">
       <HintPath>..\packages\MscrmTools.Xrm.Connection.1.2023.6.56\lib\net462\McTools.Xrm.Connection.dll</HintPath>
@@ -206,7 +209,15 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Logo.ico" />
+    <Content Include="Resources\Color.png" />
+    <Content Include="Resources\Logo\Logo 32_32.png" />
+    <Content Include="Resources\Logo\Logo.ico" />
+    <Content Include="Resources\Logo\Logo.png" />
+    <Content Include="Resources\Save.png" />
+    <Content Include="Resources\Search.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
