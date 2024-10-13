@@ -11,14 +11,14 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using XrmToolBox.Extensibility;
 
-namespace ThemePersonalizer
+namespace Customizer
 {
-    public partial class ThemePersonalization : PluginControlBase
+    public partial class ThemeCustomizer : PluginControlBase
     {
         private Settings mySettings;
         private Entity _webresource;
 
-        public ThemePersonalization()
+        public ThemeCustomizer()
         {
             InitializeComponent();
         }

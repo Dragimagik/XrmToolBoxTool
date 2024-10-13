@@ -1,6 +1,6 @@
-﻿namespace ThemePersonalizer
+﻿namespace Customizer
 {
-    partial class ThemePersonalization
+    partial class ThemeCustomizer
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemePersonalization));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemeCustomizer));
             this.tsbClose = new System.Windows.Forms.ToolStripButton();
             this.tsSeparatorSave = new System.Windows.Forms.ToolStripSeparator();
             this.tsbSave = new System.Windows.Forms.ToolStripButton();
@@ -635,13 +635,13 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // ThemePersonalization
+            // ThemeCustomizer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.toolStripMenu);
-            this.Name = "ThemePersonalization";
+            this.Name = "ThemeCustomizer";
             this.Size = new System.Drawing.Size(654, 409);
             this.Load += new System.EventHandler(this.OnLoad);
             this.toolStripMenu.ResumeLayout(false);
