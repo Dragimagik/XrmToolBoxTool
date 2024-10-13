@@ -32,17 +32,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemeCustomizer));
             this.tsbClose = new System.Windows.Forms.ToolStripButton();
             this.tsSeparatorSave = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.tsSeparatorSearch = new System.Windows.Forms.ToolStripSeparator();
             this.tbsSearch = new System.Windows.Forms.ToolStripButton();
+            this.tsbSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.gbColorProperties = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.tbBackgroundHover = new System.Windows.Forms.TextBox();
@@ -77,8 +77,8 @@
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolStripMenu.SuspendLayout();
-            this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
+            this.toolStripContainer.ContentPanel.SuspendLayout();
+            this.toolStripContainer.SuspendLayout();
             this.gbColorProperties.SuspendLayout();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -98,15 +98,6 @@
             this.tsSeparatorSave.Name = "tsSeparatorSave";
             this.tsSeparatorSave.Size = new System.Drawing.Size(6, 31);
             // 
-            // tsbSave
-            // 
-            this.tsbSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbSave.Image")));
-            this.tsbSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsbSave.Name = "tsbSave";
-            this.tsbSave.Size = new System.Drawing.Size(59, 28);
-            this.tsbSave.Text = "Save";
-            this.tsbSave.Click += new System.EventHandler(this.tsbSave_Click);
-            // 
             // toolStripMenu
             // 
             this.toolStripMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -119,7 +110,8 @@
             this.toolStripButton1});
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
-            this.toolStripMenu.Size = new System.Drawing.Size(654, 31);
+            this.toolStripMenu.Size = new System.Drawing.Size(800, 31);
+            this.toolStripMenu.Stretch = true;
             this.toolStripMenu.TabIndex = 4;
             this.toolStripMenu.Text = "toolStrip1";
             // 
@@ -137,6 +129,15 @@
             this.tbsSearch.Size = new System.Drawing.Size(70, 28);
             this.tbsSearch.Text = "Search";
             this.tbsSearch.Click += new System.EventHandler(this.tsbSearch_Click);
+            // 
+            // tsbSave
+            // 
+            this.tsbSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbSave.Image")));
+            this.tsbSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsbSave.Name = "tsbSave";
+            this.tsbSave.Size = new System.Drawing.Size(59, 28);
+            this.tsbSave.Text = "Save";
+            this.tsbSave.Click += new System.EventHandler(this.tsbSave_Click);
             // 
             // toolStripButton1
             // 
@@ -183,29 +184,28 @@
             // 
             this.ContentPanel.Size = new System.Drawing.Size(314, 198);
             // 
-            // toolStripContainer1
+            // toolStripContainer
             // 
             // 
-            // toolStripContainer1.ContentPanel
+            // toolStripContainer.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.gbColorProperties);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(654, 378);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 31);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(654, 378);
-            this.toolStripContainer1.TabIndex = 5;
-            this.toolStripContainer1.Text = "toolStripContainer1";
+            this.toolStripContainer.ContentPanel.Controls.Add(this.gbColorProperties);
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(800, 569);
+            this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer.Location = new System.Drawing.Point(0, 31);
+            this.toolStripContainer.Name = "toolStripContainer";
+            this.toolStripContainer.Size = new System.Drawing.Size(800, 569);
+            this.toolStripContainer.TabIndex = 5;
+            this.toolStripContainer.Text = "toolStripContainer";
             // 
             // gbColorProperties
             // 
-            this.gbColorProperties.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbColorProperties.AutoSize = true;
             this.gbColorProperties.Controls.Add(this.tableLayoutPanel);
-            this.gbColorProperties.Location = new System.Drawing.Point(0, 3);
+            this.gbColorProperties.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbColorProperties.Location = new System.Drawing.Point(0, 0);
             this.gbColorProperties.Name = "gbColorProperties";
-            this.gbColorProperties.Size = new System.Drawing.Size(654, 375);
+            this.gbColorProperties.Size = new System.Drawing.Size(800, 569);
             this.gbColorProperties.TabIndex = 0;
             this.gbColorProperties.TabStop = false;
             this.gbColorProperties.Text = "Color properties ";
@@ -261,18 +261,15 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel.Size = new System.Drawing.Size(642, 278);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(791, 301);
             this.tableLayoutPanel.TabIndex = 0;
-            this.tableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_Paint);
             // 
             // tbBackgroundHover
             // 
-            this.tbBackgroundHover.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbBackgroundHover.Location = new System.Drawing.Point(318, 87);
+            this.tbBackgroundHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbBackgroundHover.Location = new System.Drawing.Point(318, 93);
             this.tbBackgroundHover.Name = "tbBackgroundHover";
-            this.tbBackgroundHover.Size = new System.Drawing.Size(208, 20);
+            this.tbBackgroundHover.Size = new System.Drawing.Size(120, 20);
             this.tbBackgroundHover.TabIndex = 7;
             this.tbBackgroundHover.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.tbBackgroundHover.Validated += new System.EventHandler(this.textBox_Validated);
@@ -283,9 +280,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lBackgroundHover.AutoSize = true;
-            this.lBackgroundHover.Location = new System.Drawing.Point(3, 84);
+            this.lBackgroundHover.Location = new System.Drawing.Point(3, 88);
             this.lBackgroundHover.Name = "lBackgroundHover";
-            this.lBackgroundHover.Size = new System.Drawing.Size(309, 29);
+            this.lBackgroundHover.Size = new System.Drawing.Size(309, 31);
             this.lBackgroundHover.TabIndex = 6;
             this.lBackgroundHover.Text = "Background hover";
             this.lBackgroundHover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,9 +293,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lForeground.AutoSize = true;
-            this.lForeground.Location = new System.Drawing.Point(3, 55);
+            this.lForeground.Location = new System.Drawing.Point(3, 57);
             this.lForeground.Name = "lForeground";
-            this.lForeground.Size = new System.Drawing.Size(309, 29);
+            this.lForeground.Size = new System.Drawing.Size(309, 31);
             this.lForeground.TabIndex = 5;
             this.lForeground.Text = "Foreground";
             this.lForeground.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -322,43 +319,37 @@
             this.lBackground.AutoSize = true;
             this.lBackground.Location = new System.Drawing.Point(3, 26);
             this.lBackground.Name = "lBackground";
-            this.lBackground.Size = new System.Drawing.Size(309, 29);
+            this.lBackground.Size = new System.Drawing.Size(309, 31);
             this.lBackground.TabIndex = 0;
             this.lBackground.Text = "Background";
             this.lBackground.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbBackground
             // 
-            this.tbBackground.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbBackground.Location = new System.Drawing.Point(318, 29);
+            this.tbBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbBackground.Location = new System.Drawing.Point(318, 31);
             this.tbBackground.Name = "tbBackground";
-            this.tbBackground.Size = new System.Drawing.Size(208, 20);
+            this.tbBackground.Size = new System.Drawing.Size(120, 20);
             this.tbBackground.TabIndex = 1;
             this.tbBackground.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.tbBackground.Validated += new System.EventHandler(this.textBox_Validated);
             // 
             // tbForeground
             // 
-            this.tbForeground.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbForeground.Location = new System.Drawing.Point(318, 58);
+            this.tbForeground.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbForeground.Location = new System.Drawing.Point(318, 62);
             this.tbForeground.Name = "tbForeground";
-            this.tbForeground.Size = new System.Drawing.Size(208, 20);
+            this.tbForeground.Size = new System.Drawing.Size(120, 20);
             this.tbForeground.TabIndex = 4;
             this.tbForeground.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.tbForeground.Validated += new System.EventHandler(this.textBox_Validated);
             // 
             // tbForegroundHover
             // 
-            this.tbForegroundHover.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbForegroundHover.Location = new System.Drawing.Point(318, 116);
+            this.tbForegroundHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbForegroundHover.Location = new System.Drawing.Point(318, 124);
             this.tbForegroundHover.Name = "tbForegroundHover";
-            this.tbForegroundHover.Size = new System.Drawing.Size(208, 20);
+            this.tbForegroundHover.Size = new System.Drawing.Size(120, 20);
             this.tbForegroundHover.TabIndex = 9;
             this.tbForegroundHover.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.tbForegroundHover.Validated += new System.EventHandler(this.textBox_Validated);
@@ -369,21 +360,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lForegroundHover.AutoSize = true;
-            this.lForegroundHover.Location = new System.Drawing.Point(3, 113);
+            this.lForegroundHover.Location = new System.Drawing.Point(3, 119);
             this.lForegroundHover.Name = "lForegroundHover";
-            this.lForegroundHover.Size = new System.Drawing.Size(309, 29);
+            this.lForegroundHover.Size = new System.Drawing.Size(309, 31);
             this.lForegroundHover.TabIndex = 8;
             this.lForegroundHover.Text = "Foreground hover";
             this.lForegroundHover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbBackgroundPressed
             // 
-            this.tbBackgroundPressed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbBackgroundPressed.Location = new System.Drawing.Point(318, 145);
+            this.tbBackgroundPressed.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbBackgroundPressed.Location = new System.Drawing.Point(318, 155);
             this.tbBackgroundPressed.Name = "tbBackgroundPressed";
-            this.tbBackgroundPressed.Size = new System.Drawing.Size(208, 20);
+            this.tbBackgroundPressed.Size = new System.Drawing.Size(120, 20);
             this.tbBackgroundPressed.TabIndex = 11;
             this.tbBackgroundPressed.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.tbBackgroundPressed.Validated += new System.EventHandler(this.textBox_Validated);
@@ -394,21 +383,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lBackgroundPressed.AutoSize = true;
-            this.lBackgroundPressed.Location = new System.Drawing.Point(3, 142);
+            this.lBackgroundPressed.Location = new System.Drawing.Point(3, 150);
             this.lBackgroundPressed.Name = "lBackgroundPressed";
-            this.lBackgroundPressed.Size = new System.Drawing.Size(309, 29);
+            this.lBackgroundPressed.Size = new System.Drawing.Size(309, 31);
             this.lBackgroundPressed.TabIndex = 10;
             this.lBackgroundPressed.Text = "Background pressed";
             this.lBackgroundPressed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbForegroundPressed
             // 
-            this.tbForegroundPressed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbForegroundPressed.Location = new System.Drawing.Point(318, 174);
+            this.tbForegroundPressed.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbForegroundPressed.Location = new System.Drawing.Point(318, 186);
             this.tbForegroundPressed.Name = "tbForegroundPressed";
-            this.tbForegroundPressed.Size = new System.Drawing.Size(208, 20);
+            this.tbForegroundPressed.Size = new System.Drawing.Size(120, 20);
             this.tbForegroundPressed.TabIndex = 13;
             this.tbForegroundPressed.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.tbForegroundPressed.Validated += new System.EventHandler(this.textBox_Validated);
@@ -419,21 +406,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lForegroundPressed.AutoSize = true;
-            this.lForegroundPressed.Location = new System.Drawing.Point(3, 171);
+            this.lForegroundPressed.Location = new System.Drawing.Point(3, 181);
             this.lForegroundPressed.Name = "lForegroundPressed";
-            this.lForegroundPressed.Size = new System.Drawing.Size(309, 29);
+            this.lForegroundPressed.Size = new System.Drawing.Size(309, 31);
             this.lForegroundPressed.TabIndex = 12;
             this.lForegroundPressed.Text = "Foreground pressed";
             this.lForegroundPressed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbBackgroundSelected
             // 
-            this.tbBackgroundSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbBackgroundSelected.Location = new System.Drawing.Point(318, 203);
+            this.tbBackgroundSelected.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbBackgroundSelected.Location = new System.Drawing.Point(318, 217);
             this.tbBackgroundSelected.Name = "tbBackgroundSelected";
-            this.tbBackgroundSelected.Size = new System.Drawing.Size(208, 20);
+            this.tbBackgroundSelected.Size = new System.Drawing.Size(120, 20);
             this.tbBackgroundSelected.TabIndex = 15;
             this.tbBackgroundSelected.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.tbBackgroundSelected.Validated += new System.EventHandler(this.textBox_Validated);
@@ -444,21 +429,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lBackgroundSelected.AutoSize = true;
-            this.lBackgroundSelected.Location = new System.Drawing.Point(3, 200);
+            this.lBackgroundSelected.Location = new System.Drawing.Point(3, 212);
             this.lBackgroundSelected.Name = "lBackgroundSelected";
-            this.lBackgroundSelected.Size = new System.Drawing.Size(309, 29);
+            this.lBackgroundSelected.Size = new System.Drawing.Size(309, 31);
             this.lBackgroundSelected.TabIndex = 14;
             this.lBackgroundSelected.Text = "Background selected";
             this.lBackgroundSelected.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbForegroundSelected
             // 
-            this.tbForegroundSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbForegroundSelected.Location = new System.Drawing.Point(318, 232);
+            this.tbForegroundSelected.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbForegroundSelected.Location = new System.Drawing.Point(318, 248);
             this.tbForegroundSelected.Name = "tbForegroundSelected";
-            this.tbForegroundSelected.Size = new System.Drawing.Size(208, 20);
+            this.tbForegroundSelected.Size = new System.Drawing.Size(120, 20);
             this.tbForegroundSelected.TabIndex = 17;
             this.tbForegroundSelected.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             this.tbForegroundSelected.Validated += new System.EventHandler(this.textBox_Validated);
@@ -469,9 +452,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lForegroundSelected.AutoSize = true;
-            this.lForegroundSelected.Location = new System.Drawing.Point(3, 229);
+            this.lForegroundSelected.Location = new System.Drawing.Point(3, 243);
             this.lForegroundSelected.Name = "lForegroundSelected";
-            this.lForegroundSelected.Size = new System.Drawing.Size(309, 29);
+            this.lForegroundSelected.Size = new System.Drawing.Size(309, 31);
             this.lForegroundSelected.TabIndex = 16;
             this.lForegroundSelected.Text = "Foreground selected";
             this.lForegroundSelected.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -482,9 +465,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lOrgSetting.AutoSize = true;
-            this.lOrgSetting.Location = new System.Drawing.Point(3, 258);
+            this.lOrgSetting.Location = new System.Drawing.Point(3, 274);
             this.lOrgSetting.Name = "lOrgSetting";
-            this.lOrgSetting.Size = new System.Drawing.Size(309, 20);
+            this.lOrgSetting.Size = new System.Drawing.Size(309, 27);
             this.lOrgSetting.TabIndex = 18;
             this.lOrgSetting.Text = "Organization setting";
             this.lOrgSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -521,11 +504,12 @@
             // 
             this.bColorPickerBackground.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.bColorPickerBackground.AutoSize = true;
+            this.bColorPickerBackground.Image = ((System.Drawing.Image)(resources.GetObject("bColorPickerBackground.Image")));
             this.bColorPickerBackground.Location = new System.Drawing.Point(532, 29);
             this.bColorPickerBackground.Name = "bColorPickerBackground";
-            this.bColorPickerBackground.Size = new System.Drawing.Size(75, 23);
+            this.bColorPickerBackground.Size = new System.Drawing.Size(25, 25);
             this.bColorPickerBackground.TabIndex = 21;
-            this.bColorPickerBackground.Text = "Color Picker";
             this.bColorPickerBackground.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bColorPickerBackground.UseVisualStyleBackColor = true;
             this.bColorPickerBackground.Click += new System.EventHandler(this.colorButton_Click);
@@ -534,11 +518,12 @@
             // 
             this.bColorPickerForeground.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.bColorPickerForeground.Location = new System.Drawing.Point(532, 58);
+            this.bColorPickerForeground.AutoSize = true;
+            this.bColorPickerForeground.Image = ((System.Drawing.Image)(resources.GetObject("bColorPickerForeground.Image")));
+            this.bColorPickerForeground.Location = new System.Drawing.Point(532, 60);
             this.bColorPickerForeground.Name = "bColorPickerForeground";
-            this.bColorPickerForeground.Size = new System.Drawing.Size(75, 23);
+            this.bColorPickerForeground.Size = new System.Drawing.Size(25, 25);
             this.bColorPickerForeground.TabIndex = 22;
-            this.bColorPickerForeground.Text = "Color Picker";
             this.bColorPickerForeground.UseVisualStyleBackColor = true;
             this.bColorPickerForeground.Click += new System.EventHandler(this.colorButton_Click);
             // 
@@ -546,11 +531,12 @@
             // 
             this.bColorPickerBackgroundHover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.bColorPickerBackgroundHover.Location = new System.Drawing.Point(532, 87);
+            this.bColorPickerBackgroundHover.AutoSize = true;
+            this.bColorPickerBackgroundHover.Image = ((System.Drawing.Image)(resources.GetObject("bColorPickerBackgroundHover.Image")));
+            this.bColorPickerBackgroundHover.Location = new System.Drawing.Point(532, 91);
             this.bColorPickerBackgroundHover.Name = "bColorPickerBackgroundHover";
-            this.bColorPickerBackgroundHover.Size = new System.Drawing.Size(75, 23);
+            this.bColorPickerBackgroundHover.Size = new System.Drawing.Size(25, 25);
             this.bColorPickerBackgroundHover.TabIndex = 23;
-            this.bColorPickerBackgroundHover.Text = "Color Picker";
             this.bColorPickerBackgroundHover.UseVisualStyleBackColor = true;
             this.bColorPickerBackgroundHover.Click += new System.EventHandler(this.colorButton_Click);
             // 
@@ -558,11 +544,12 @@
             // 
             this.bColorPickerForegroundHover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.bColorPickerForegroundHover.Location = new System.Drawing.Point(532, 116);
+            this.bColorPickerForegroundHover.AutoSize = true;
+            this.bColorPickerForegroundHover.Image = ((System.Drawing.Image)(resources.GetObject("bColorPickerForegroundHover.Image")));
+            this.bColorPickerForegroundHover.Location = new System.Drawing.Point(532, 122);
             this.bColorPickerForegroundHover.Name = "bColorPickerForegroundHover";
-            this.bColorPickerForegroundHover.Size = new System.Drawing.Size(75, 23);
+            this.bColorPickerForegroundHover.Size = new System.Drawing.Size(25, 25);
             this.bColorPickerForegroundHover.TabIndex = 24;
-            this.bColorPickerForegroundHover.Text = "Color Picker";
             this.bColorPickerForegroundHover.UseVisualStyleBackColor = true;
             this.bColorPickerForegroundHover.Click += new System.EventHandler(this.colorButton_Click);
             // 
@@ -570,11 +557,12 @@
             // 
             this.bColorPickerBackgroundPressed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.bColorPickerBackgroundPressed.Location = new System.Drawing.Point(532, 145);
+            this.bColorPickerBackgroundPressed.AutoSize = true;
+            this.bColorPickerBackgroundPressed.Image = ((System.Drawing.Image)(resources.GetObject("bColorPickerBackgroundPressed.Image")));
+            this.bColorPickerBackgroundPressed.Location = new System.Drawing.Point(532, 153);
             this.bColorPickerBackgroundPressed.Name = "bColorPickerBackgroundPressed";
-            this.bColorPickerBackgroundPressed.Size = new System.Drawing.Size(75, 23);
+            this.bColorPickerBackgroundPressed.Size = new System.Drawing.Size(25, 25);
             this.bColorPickerBackgroundPressed.TabIndex = 25;
-            this.bColorPickerBackgroundPressed.Text = "Color Picker";
             this.bColorPickerBackgroundPressed.UseVisualStyleBackColor = true;
             this.bColorPickerBackgroundPressed.Click += new System.EventHandler(this.colorButton_Click);
             // 
@@ -582,11 +570,12 @@
             // 
             this.bColorPickerForegroundPressed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.bColorPickerForegroundPressed.Location = new System.Drawing.Point(532, 174);
+            this.bColorPickerForegroundPressed.AutoSize = true;
+            this.bColorPickerForegroundPressed.Image = ((System.Drawing.Image)(resources.GetObject("bColorPickerForegroundPressed.Image")));
+            this.bColorPickerForegroundPressed.Location = new System.Drawing.Point(532, 184);
             this.bColorPickerForegroundPressed.Name = "bColorPickerForegroundPressed";
-            this.bColorPickerForegroundPressed.Size = new System.Drawing.Size(75, 23);
+            this.bColorPickerForegroundPressed.Size = new System.Drawing.Size(25, 25);
             this.bColorPickerForegroundPressed.TabIndex = 26;
-            this.bColorPickerForegroundPressed.Text = "Color Picker";
             this.bColorPickerForegroundPressed.UseVisualStyleBackColor = true;
             this.bColorPickerForegroundPressed.Click += new System.EventHandler(this.colorButton_Click);
             // 
@@ -594,11 +583,12 @@
             // 
             this.bColorPickerBackgroundSelected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.bColorPickerBackgroundSelected.Location = new System.Drawing.Point(532, 203);
+            this.bColorPickerBackgroundSelected.AutoSize = true;
+            this.bColorPickerBackgroundSelected.Image = ((System.Drawing.Image)(resources.GetObject("bColorPickerBackgroundSelected.Image")));
+            this.bColorPickerBackgroundSelected.Location = new System.Drawing.Point(532, 215);
             this.bColorPickerBackgroundSelected.Name = "bColorPickerBackgroundSelected";
-            this.bColorPickerBackgroundSelected.Size = new System.Drawing.Size(75, 23);
+            this.bColorPickerBackgroundSelected.Size = new System.Drawing.Size(25, 25);
             this.bColorPickerBackgroundSelected.TabIndex = 27;
-            this.bColorPickerBackgroundSelected.Text = "Color Picker";
             this.bColorPickerBackgroundSelected.UseVisualStyleBackColor = true;
             this.bColorPickerBackgroundSelected.Click += new System.EventHandler(this.colorButton_Click);
             // 
@@ -606,11 +596,12 @@
             // 
             this.bColorPickerForegroundSelected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.bColorPickerForegroundSelected.Location = new System.Drawing.Point(532, 232);
+            this.bColorPickerForegroundSelected.AutoSize = true;
+            this.bColorPickerForegroundSelected.Image = ((System.Drawing.Image)(resources.GetObject("bColorPickerForegroundSelected.Image")));
+            this.bColorPickerForegroundSelected.Location = new System.Drawing.Point(532, 246);
             this.bColorPickerForegroundSelected.Name = "bColorPickerForegroundSelected";
-            this.bColorPickerForegroundSelected.Size = new System.Drawing.Size(75, 23);
+            this.bColorPickerForegroundSelected.Size = new System.Drawing.Size(25, 25);
             this.bColorPickerForegroundSelected.TabIndex = 28;
-            this.bColorPickerForegroundSelected.Text = "Color Picker";
             this.bColorPickerForegroundSelected.UseVisualStyleBackColor = true;
             this.bColorPickerForegroundSelected.Click += new System.EventHandler(this.colorButton_Click);
             // 
@@ -624,9 +615,9 @@
             this.cbOrgSetting.Checked = true;
             this.cbOrgSetting.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbOrgSetting.Enabled = false;
-            this.cbOrgSetting.Location = new System.Drawing.Point(318, 261);
+            this.cbOrgSetting.Location = new System.Drawing.Point(318, 277);
             this.cbOrgSetting.Name = "cbOrgSetting";
-            this.cbOrgSetting.Size = new System.Drawing.Size(208, 14);
+            this.cbOrgSetting.Size = new System.Drawing.Size(208, 21);
             this.cbOrgSetting.TabIndex = 19;
             this.cbOrgSetting.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cbOrgSetting.UseVisualStyleBackColor = true;
@@ -639,16 +630,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.toolStripContainer1);
+            this.Controls.Add(this.toolStripContainer);
             this.Controls.Add(this.toolStripMenu);
             this.Name = "ThemeCustomizer";
-            this.Size = new System.Drawing.Size(654, 409);
+            this.Size = new System.Drawing.Size(800, 600);
             this.Load += new System.EventHandler(this.OnLoad);
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();
-            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
+            this.toolStripContainer.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer.ContentPanel.PerformLayout();
+            this.toolStripContainer.ResumeLayout(false);
+            this.toolStripContainer.PerformLayout();
             this.gbColorProperties.ResumeLayout(false);
             this.gbColorProperties.PerformLayout();
             this.tableLayoutPanel.ResumeLayout(false);
@@ -670,7 +662,7 @@
         private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
         private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
         private System.Windows.Forms.ToolStripContentPanel ContentPanel;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer;
         private System.Windows.Forms.GroupBox gbColorProperties;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.Label lBackground;

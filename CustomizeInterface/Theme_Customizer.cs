@@ -47,7 +47,6 @@ namespace Customizer
 
         private void save()
         {
-
             List<TextBox> textBoxes = new List<TextBox>
             {
                 tbBackground,
@@ -59,6 +58,7 @@ namespace Customizer
                 tbBackgroundSelected,
                 tbForegroundSelected
             };
+
             textBoxes.ForEach(textBox =>
             {
                 if (!checkFormat(textBox.Text))
@@ -66,10 +66,12 @@ namespace Customizer
                 else
                     errorProvider.SetError(textBox, "");
             });
+            if (textBoxes.All(textBox => errorProvider.GetError(textBox) == string.Empty))
+               if( MessageBox.Show($"Some theme properties are invalid. Do you really want to save them?", "Warning", MessageBoxButtons.OKCancel) == DialogResult.Cancel) return;
 
             WorkAsync(new WorkAsyncInfo
             {
-                Message = "Save your personalization",
+                Message = "Saving your theme customization",
                 Work = (worker, args) =>
                 {
                     QueryExpression querySettingDefinition = new QueryExpression("settingdefinition");
@@ -80,7 +82,8 @@ namespace Customizer
                         throw new Exception("Cannot find the customisation setting");
                     Entity webresourceCustomization = (_webresource == null) ? _webresource : Service.Retrieve(_webresource.LogicalName, _webresource.Id, new ColumnSet("name", "content"));
                     string webresourceName = tbWebresourceName.Text;
-                    string encodedContent = Convert.ToBase64String(Encoding.UTF8.GetBytes($"<AppHeaderColors background=\"{tbBackground.Text}\" foreground=\"{tbForeground.Text}\" backgroundHover=\"{tbBackgroundHover.Text}\" foregroundHover=\"{tbForegroundHover.Text}\" backgroundPressed=\"{tbBackgroundPressed.Text}\" foregroundPressed=\"{tbForegroundPressed.Text}\" backgroundSelected=\"{tbBackgroundSelected.Text}\" foregroundSelected=\"{tbForegroundSelected.Text}\"  />"));
+                    string properties = textBoxes.Where(textBoxe => !isEmpty(textBoxe.Text)).Select(textBox => $"{textBox.Name.Replace("tb", "")}=\"{textBox.Text}\"").Aggregate((a, b) => $"{a} {b}");
+                    string encodedContent = Convert.ToBase64String(Encoding.UTF8.GetBytes($"<AppHeaderColors {properties} />"));
                     if (webresourceCustomization == null)
                     {
                         webresourceCustomization = new Entity("webresource");
@@ -183,6 +186,7 @@ namespace Customizer
                 return;
             }
 
+
             WorkAsync(new WorkAsyncInfo
             {
                 Message = "Getting Customization",
@@ -282,12 +286,6 @@ namespace Customizer
             }
         }
 
-
-        private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void colorButton_Click(object sender, EventArgs e)
         {
             if (colorDialog.ShowDialog() != DialogResult.OK)
@@ -305,32 +303,52 @@ namespace Customizer
             return this.Controls.Find($"tb{colorName}", true).FirstOrDefault() as TextBox;
         }
 
-        private void checkFormat_Change(object sender, EventArgs e)
-        {
 
-        }
-
-        private void textBox_Validating(object sender,
-                System.ComponentModel.CancelEventArgs e)
+        private void textBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            if (checkFormat(textBox.Text))
-                return;
-            e.Cancel = true;
-            //textBox.Select(0, textBox.Text.Length);
-            this.errorProvider.SetError(textBox, "Incorrect color format");
+            try
+            {
+                if (!checkFormat(textBox.Text))
+                    this.errorProvider.SetError(textBox, "Incorrect color format");
+                if (!isEmpty(textBox.Text))
+                {
+                                        textBox.Text = formatColor(textBox.Text);
+                textBox.BackColor = ColorTranslator.FromHtml(textBox.Text);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                this.errorProvider.SetError(textBox, $"Incorrect value: {ex.Message}");
+            }
         }
 
         private void textBox_Validated(object sender, System.EventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            this.errorProvider.SetError(textBox, "");
+            try
+            {
+                if (checkFormat(textBox.Text))
+                    this.errorProvider.SetError(textBox, "");
+            }
+            catch (Exception ex)
+            {
+                this.errorProvider.SetError(textBox, $"Incorrect value: {ex.Message}");
+            }
         }
 
         private bool checkFormat(string input)
         {
+            if (isEmpty(input))
+                return true;
             Regex regex = new Regex(@"^[#]?[0-9a-fA-F]{6}$");
             return regex.IsMatch(input);
+        }
+
+        private bool isEmpty(string input)
+        {
+            return input == string.Empty;
         }
 
         private string formatColor(string input)
@@ -339,5 +357,6 @@ namespace Customizer
                 return input;
             return $"#{input}";
         }
+
     }
 }
